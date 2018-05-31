@@ -1,6 +1,6 @@
 <p>Example of the range selection</p>
 
-<ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t">
+<ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t">
 </ngb-datepicker>
 
 <ng-template #t let-date="date" let-focused="focused">
@@ -13,6 +13,7 @@
     {{ date.day }}
   </span>
 </ng-template>
+<button (click)="blackoutMode()">Activate Blackout</button>
 
 <hr>
 

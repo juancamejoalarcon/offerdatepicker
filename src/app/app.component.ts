@@ -22,6 +22,7 @@ export class AppComponent {
 
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
+  blackOutMode;
 
   constructor(calendar: NgbCalendar) {
     this.fromDate = calendar.getToday();
@@ -36,6 +37,14 @@ export class AppComponent {
     } else {
       this.toDate = null;
       this.fromDate = date;
+    }
+  }
+
+  blackoutMode() {
+    if (!this.blackoutMode) {
+      console.log('true');
+    } else {
+      console.log('false');
     }
   }
 
