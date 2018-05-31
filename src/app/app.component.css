@@ -22,3 +22,6 @@
   .prueba:hover {
     color: #5bc0de;
   }
+  .prueba2 {
+    background-color: black !important;
+  }

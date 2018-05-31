@@ -9,6 +9,7 @@
         [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
         [class.faded]="isHovered(date) || isInside(date)"
         [class.prueba]="blackOutModeActive && !isFrom(date) && !isTo(date) && !isInside(date)"
+        [class.prueba2]="focused && isInRange(date)"
         (mouseenter)="hoveredDate = date"
         (mouseleave)="hoveredDate = null">
     {{ date.day }}
