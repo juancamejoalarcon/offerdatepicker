@@ -1,40 +1,20 @@
-<ngb-datepicker [displayMonths]="displayMonths" [navigation]="navigation" [showWeekNumbers]="showWeekNumbers">
+<p>Example of the range selection</p>
+
+<ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t">
 </ngb-datepicker>
 
-<hr/>
+<ng-template #t let-date="date" let-focused="focused">
+  <span class="custom-day"
+        [class.focused]="focused"
+        [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+        [class.faded]="isHovered(date) || isInside(date)"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null">
+    {{ date.day }}
+  </span>
+</ng-template>
 
-<form class="form-inline">
-  <div class="form-group">
-    <div class="input-group">
-      <input class="form-control" placeholder="yyyy-mm-dd"
-             name="dp" [displayMonths]="displayMonths" [navigation]="navigation"
-             [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-          <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-        </button>
-      </div>
-    </div>
-  </div>
-</form>
+<hr>
 
-<hr/>
-
-<div class="d-flex">
-  <select class="custom-select" [(ngModel)]="displayMonths">
-    <option [ngValue]="1">One month</option>
-    <option [ngValue]="2">Two months</option>
-    <option [ngValue]="3">Three months</option>
-  </select>
-
-  <select class="custom-select" [(ngModel)]="navigation">
-    <option value="none">Without navigation</option>
-    <option value="select">With select boxes</option>
-    <option value="arrows">Without select boxes</option>
-  </select>
-
-  <select class="custom-select" [(ngModel)]="showWeekNumbers">
-    <option [ngValue]="true">Week numbers</option>
-    <option [ngValue]="false">No week numbers</option>
-  </select>
-</div>
+<pre>From: {{ fromDate | json }} </pre>
+<pre>To: {{ toDate | json }} </pre>
