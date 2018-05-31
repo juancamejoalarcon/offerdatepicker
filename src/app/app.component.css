@@ -17,11 +17,12 @@
   }
   .prueba {
     background-color: #f8f9fa !important;
-    color: #5bc0de;
+    pointer-events: none !important;
+    color: #f8f9fa;
   }
   .prueba:hover {
-    color: #5bc0de;
+    color: #f8f9fa;
   }
-  .prueba2 {
+  .prueba2:hover {
     background-color: black !important;
   }
