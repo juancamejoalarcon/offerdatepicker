@@ -83,6 +83,10 @@ export class AppComponent {
     }
   }
 
+  clearBlackoutsList() {
+    this.blackOutsList = [];
+  }
+
   isHovered = date => this.fromDate && !this.toDate && this.hoveredDate && after(date, this.fromDate) && before(date, this.hoveredDate);
   isInside = date => after(date, this.fromDate) && before(date, this.toDate);
   isFrom = date => equals(date, this.fromDate);
