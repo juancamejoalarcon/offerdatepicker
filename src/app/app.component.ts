@@ -60,7 +60,6 @@ export class AppComponent {
         }
       }
     }
-    console.log(this.blackOutsList);
   }
 
   blackoutMode() {
@@ -77,6 +76,14 @@ export class AppComponent {
       const probando = this.prueba.nativeElement.querySelectorAll('.ngb-dp-day');
       for (const prueba of probando) {
         prueba.style.pointerEvents = 'auto';
+      }
+    }
+  }
+
+  isInBlackOutsList(date: NgbDateStruct) {
+    for (let blackout of this.blackOutsList) {
+      if (equals(date, blackout)) {
+        return true
       }
     }
   }
