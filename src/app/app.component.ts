@@ -1,4 +1,4 @@
-import {Component, ViewChild, ElementRef} from '@angular/core';
+import {Component, ViewChild, ElementRef, Renderer2, OnInit} from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 const equals = (one: NgbDateStruct, two: NgbDateStruct) =>
@@ -17,18 +17,24 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  
   hoveredDate: NgbDateStruct;
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
+
   blackOutDate: NgbDateStruct;
   blackOutsList: Array<NgbDateStruct> = [];
   blackOutModeActive: boolean = false;
-  @ViewChild('prueba') prueba: ElementRef;
 
-  constructor(calendar: NgbCalendar) {
+  @ViewChild('blackoutsDatePicker') blackoutsDatePicker: ElementRef;
+
+  constructor(calendar: NgbCalendar, private renderer: Renderer2) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+  }
+
+  ngOnInit() {
   }
 
   onDateSelection(date: NgbDateStruct) {
@@ -60,17 +66,32 @@ export class AppComponent {
   blackoutMode() {
     if (!this.blackOutModeActive) {
       this.blackOutModeActive = true;
-      const probando = this.prueba.nativeElement.querySelectorAll('.ngb-dp-day');
-      for (const prueba of probando) {
-        if (!prueba.childNodes[2].classList.contains('range')) {
-          prueba.style.pointerEvents = 'none';
+      const days = this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-day');
+      for (const day of days) {
+        if (!day.childNodes[2].classList.contains('range')) {
+          day.style.pointerEvents = 'none';
         }
       }
+      // (Ugly programming alert)
+      // This function makes sure that if you click an arrow you cannot 
+      // click days out of the selected range
+      for (let arrow of this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-arrow')) {
+        let arrowListener = this.renderer.listen(arrow, 'click', () => {
+          if (this.blackOutModeActive) {
+            const days = this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-day');
+            for (const day of days) {
+              if (!day.childNodes[2].classList.contains('range')) {
+              day.style.pointerEvents = 'none';
+            }
+          }
+        }
+      });
+    }
     } else {
       this.blackOutModeActive = false;
-      const probando = this.prueba.nativeElement.querySelectorAll('.ngb-dp-day');
-      for (const prueba of probando) {
-        prueba.style.pointerEvents = 'auto';
+      const days = this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-day');
+      for (const day of days) {
+        day.style.pointerEvents = 'auto';
       }
     }
   }

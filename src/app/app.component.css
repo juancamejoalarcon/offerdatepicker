@@ -15,14 +15,14 @@
   .custom-day.faded {
     background-color: rgba(2, 117, 216, 0.5);
   }
-  .prueba {
+  .blackOutMode {
     background-color: white !important;
     color: white;
   }
-  .prueba:hover {
+  .blackOutMode:hover {
     color: #f8f9fa;
   }
-  .prueba2:hover {
+  .blackOutHover:hover {
     background-color: black !important;
   }
   .blackout {

@@ -1,27 +1,30 @@
 <p>Example of the range selection</p>
 
-<div #prueba>
-<ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t">
-</ngb-datepicker>
+<div #blackoutsDatePicker>
 
-<ng-template #t let-date="date" let-focused="focused">
-  <span #prueba class="custom-day"
+  <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t">
+  </ngb-datepicker>
+
+  <ng-template #t let-date="date" let-focused="focused">
+    <span class="custom-day"
         [class.focused]="focused"
         [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
         [class.faded]="isHovered(date) || isInside(date)"
-        [class.prueba]="blackOutModeActive && !isInRange(date)"
-        [class.prueba2]="blackOutModeActive && isInRange(date)"
+        [class.blackOutMode]="blackOutModeActive && !isInRange(date)"
+        [class.blackOutHover]="blackOutModeActive && isInRange(date)"
         [class.blackout]="isInBlackOutsList(date) && isInRange(date)"
         (mouseenter)="hoveredDate = date"
         (mouseleave)="hoveredDate = null">
-    {{ date.day }}
-  </span>
-</ng-template>
+      {{ date.day }}
+    </span>
+  </ng-template>
+
 </div>
 <button style="font-size:70%" type="button" class="btn btn-primary btn-sm my-1"(click)="blackoutMode()">
   Blackouts
 </button>
-<button style="font-size:70%" type="button" class="btn btn-secondary btn-sm my-1 ml-2" (click)="clearBlackoutsList()">
+<button style="font-size:70%" type="button" class="btn btn-secondary btn-sm my-1 ml-2" 
+(click)="clearBlackoutsList()">
   Clear
 </button>
 
