@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 const equals = (one: NgbDateStruct, two: NgbDateStruct) =>
@@ -22,6 +22,7 @@ export class AppComponent {
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
   blackOutModeActive: boolean = false;
+  @ViewChild('prueba') prueba: ElementRef;
 
 
   constructor(calendar: NgbCalendar) {
@@ -41,13 +42,21 @@ export class AppComponent {
   }
 
   blackoutMode() {
-
     if (!this.blackOutModeActive) {
       this.blackOutModeActive = true;
-      console.log('true');
+      const probando = this.prueba.nativeElement.querySelectorAll('.ngb-dp-day');
+      for (const prueba of probando) {
+        if (!prueba.childNodes[2].classList.contains('range')) {
+          console.log(prueba.parentNode);
+          prueba.style.pointerEvents = 'none';
+        }
+      }
     } else {
       this.blackOutModeActive = false;
-      console.log('false');
+      const probando = this.prueba.nativeElement.querySelectorAll('.ngb-dp-day');
+      for (const prueba of probando) {
+        prueba.style.pointerEvents = 'auto';
+      }
     }
   }
 
