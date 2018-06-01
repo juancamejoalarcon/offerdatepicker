@@ -9,7 +9,7 @@
         [class.focused]="focused"
         [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
         [class.faded]="isHovered(date) || isInside(date)"
-        [class.prueba]="blackOutModeActive && !isFrom(date) && !isTo(date) && !isInside(date)"
+        [class.prueba]="blackOutModeActive && !isInRange(date)"
         [class.prueba2]="blackOutModeActive && isInRange(date)"
         (mouseenter)="hoveredDate = date"
         (mouseleave)="hoveredDate = null">
@@ -23,3 +23,4 @@
 
 <pre>From: {{ fromDate | json }} </pre>
 <pre>To: {{ toDate | json }} </pre>
+<pre>Blackout: {{ blackOutDate | json }} </pre>

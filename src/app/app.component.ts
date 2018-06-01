@@ -21,6 +21,8 @@ export class AppComponent {
   hoveredDate: NgbDateStruct;
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
+  blackOutDate: NgbDateStruct;
+  blackOutsList: Array<NgbDateStruct> = [];
   blackOutModeActive: boolean = false;
   @ViewChild('prueba') prueba: ElementRef;
 
@@ -31,14 +33,34 @@ export class AppComponent {
   }
 
   onDateSelection(date: NgbDateStruct) {
-    if (!this.fromDate && !this.toDate) {
-      this.fromDate = date;
-    } else if (this.fromDate && !this.toDate && after(date, this.fromDate)) {
-      this.toDate = date;
+    if (!this.blackOutModeActive) {
+      if (!this.fromDate && !this.toDate) {
+        this.fromDate = date;
+      } else if (this.fromDate && !this.toDate && after(date, this.fromDate)) {
+        this.toDate = date;
+      } else {
+        this.toDate = null;
+        this.fromDate = date;
+      }
     } else {
-      this.toDate = null;
-      this.fromDate = date;
+      if (!this.blackOutsList.length) {
+        this.blackOutDate = date;
+        this.blackOutsList.push(date);
+      } else {
+        let includes: boolean;
+        for (let blackout of this.blackOutsList) {
+          if (equals(date, blackout)) {
+            includes = true;
+            break;
+          }
+        }
+        if (!includes) {
+          this.blackOutDate = date;
+          this.blackOutsList.push(date);
+        }
+      }
     }
+    console.log(this.blackOutsList);
   }
 
   blackoutMode() {
@@ -47,7 +69,6 @@ export class AppComponent {
       const probando = this.prueba.nativeElement.querySelectorAll('.ngb-dp-day');
       for (const prueba of probando) {
         if (!prueba.childNodes[2].classList.contains('range')) {
-          console.log(prueba.parentNode);
           prueba.style.pointerEvents = 'none';
         }
       }
