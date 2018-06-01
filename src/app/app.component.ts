@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 const equals = (one: NgbDateStruct, two: NgbDateStruct) =>
@@ -19,10 +19,10 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
 })
 export class AppComponent {
   hoveredDate: NgbDateStruct;
-
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
   blackOutModeActive: boolean = false;
+
 
   constructor(calendar: NgbCalendar) {
     this.fromDate = calendar.getToday();
@@ -41,6 +41,7 @@ export class AppComponent {
   }
 
   blackoutMode() {
+
     if (!this.blackOutModeActive) {
       this.blackOutModeActive = true;
       console.log('true');

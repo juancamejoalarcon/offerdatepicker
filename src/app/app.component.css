@@ -17,7 +17,6 @@
   }
   .prueba {
     background-color: #f8f9fa !important;
-    pointer-events: none !important;
     color: #f8f9fa;
   }
   .prueba:hover {
@@ -26,3 +25,6 @@
   .prueba2:hover {
     background-color: black !important;
   }
+  .ngb-dp-day[_ngcontent-c4]{ 
+    pointer-events: none;
+  } 
