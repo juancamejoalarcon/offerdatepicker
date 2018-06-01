@@ -26,7 +26,6 @@ export class AppComponent {
   blackOutModeActive: boolean = false;
   @ViewChild('prueba') prueba: ElementRef;
 
-
   constructor(calendar: NgbCalendar) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
@@ -47,16 +46,12 @@ export class AppComponent {
         this.blackOutDate = date;
         this.blackOutsList.push(date);
       } else {
-        let includes: boolean;
-        for (let blackout of this.blackOutsList) {
-          if (equals(date, blackout)) {
-            includes = true;
-            break;
-          }
-        }
-        if (!includes) {
+        if (!this.isInBlackOutsList(date)) {
           this.blackOutDate = date;
           this.blackOutsList.push(date);
+        } else {
+          var index = this.blackOutsList.indexOf(this.isInBlackOutsList(date));
+          if (index !== -1) this.blackOutsList.splice(index, 1);
         }
       }
     }
@@ -83,11 +78,10 @@ export class AppComponent {
   isInBlackOutsList(date: NgbDateStruct) {
     for (let blackout of this.blackOutsList) {
       if (equals(date, blackout)) {
-        return true
+        return true && blackout
       }
     }
   }
-
 
   isHovered = date => this.fromDate && !this.toDate && this.hoveredDate && after(date, this.fromDate) && before(date, this.hoveredDate);
   isInside = date => after(date, this.fromDate) && before(date, this.toDate);

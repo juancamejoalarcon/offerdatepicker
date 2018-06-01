@@ -11,17 +11,19 @@
         [class.faded]="isHovered(date) || isInside(date)"
         [class.prueba]="blackOutModeActive && !isInRange(date)"
         [class.prueba2]="blackOutModeActive && isInRange(date)"
-        [class.blackout]="isInBlackOutsList(date)"
+        [class.blackout]="isInBlackOutsList(date) && isInRange(date)"
         (mouseenter)="hoveredDate = date"
         (mouseleave)="hoveredDate = null">
     {{ date.day }}
   </span>
 </ng-template>
 </div>
-<button (click)="blackoutMode()">Activate Blackout</button>
+<button style="font-size:70%" type="button" class="btn btn-primary btn-sm my-1"(click)="blackoutMode()">
+  Blackouts
+</button>
 
 <hr>
 
 <pre>From: {{ fromDate | json }} </pre>
 <pre>To: {{ toDate | json }} </pre>
-<pre>Blackout: {{ blackOutDate | json }} </pre>
+<pre>Blackouts: {{ blackOutsList | json }} </pre>

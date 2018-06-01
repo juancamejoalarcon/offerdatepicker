@@ -16,8 +16,8 @@
     background-color: rgba(2, 117, 216, 0.5);
   }
   .prueba {
-    background-color: #f8f9fa !important;
-    color: #f8f9fa;
+    background-color: white !important;
+    color: white;
   }
   .prueba:hover {
     color: #f8f9fa;
