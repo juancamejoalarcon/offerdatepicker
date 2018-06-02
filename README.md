@@ -1,6 +1,6 @@
 # Offerdatepicker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This is a datepicker calendar that lets you select a range of dates and within that range you are also able to select days when you don't want this range to be applied. For instance, if I were to create an offer, that is going to be available during a period of time, but I don't one this offer to be available on Saturdays, or the day 24th of December, this datepicker let you select both.
 
 ## Development server
 
