@@ -1,10 +1,11 @@
 # Offerdatepicker
 
-This is a datepicker calendar that lets you select a range of dates and within that range you are also able to select days when you don't want this range to be applied. For instance, if I were to create an offer, that is going to be available during a period of time, but I don't one this offer to be available on Saturdays, or the day 24th of December, this datepicker let you select both.
+This is a datepicker calendar that lets you select a range of dates and within that range you are also able to select days when you don't want this range to be applied. For instance, if I were to create an offer, that is going to be available during a period of time, but I don't one this offer to be available on Saturdays, or the day 24th of December, this datepicker let you select both, so within a range you will also have 'blackouts' (didn't know how to call it).
 
-## Development server
+## Quick tutorial
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Select the range
+2. Press the button
 
 ## Code scaffolding
 
