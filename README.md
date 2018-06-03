@@ -1,7 +1,7 @@
 <h1> Offerdatepicker <img src="https://ng-bootstrap.github.io/img/logo.svg" width="40" height="40"/>
 </h1>
 <p>
-<sub>Built with ❤︎ by
+<sub>A cool angular 2+ component built with ❤︎ by
   <a href="https://juancamejoalarcon">Juan Camejo Alarcón</a>
   </sub>
   </p>
