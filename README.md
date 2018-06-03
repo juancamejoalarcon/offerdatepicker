@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/juancamejoalarcon/formbaseddocs">
+  <a href="https://travis-ci.org/juancamejoalarcon/offerdatepicker">
     <img src="https://travis-ci.org/webpro/release-it.svg?branch=master"
          alt="Travis">
   </a>
