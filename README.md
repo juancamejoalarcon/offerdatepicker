@@ -26,9 +26,11 @@ This is a datepicker calendar that lets you select a range of dates and within t
 
 ## Installation
 
-I built this datepicker on top of the calendar already created by Bootstrap with ng-bootstrap. So the first step would be to install <a href="https://ng-bootstrap.github.io/#/home">ng-bootstrap</a>
+I built this datepicker on top of the calendar already created by Bootstrap with ng-bootstrap. So the first step would be to install. <a href="https://ng-bootstrap.github.io/#/home">ng-bootstrap</a>
 
 ## Usage
+
+As it is done with others ng-bootstrap <a href="https://ng-bootstrap.github.io/#/components/datepicker/examples">components</a> create the offerdatepicker using the following code:
 
 ```javascript
 import {Component, ViewChild, ElementRef, Renderer2, OnInit} from '@angular/core';
