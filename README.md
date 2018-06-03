@@ -8,13 +8,13 @@ This is a datepicker calendar that lets you select a range of dates and within t
 
 ## Quick tutorial
 
-<ul>
+<ol>
     <li>Select the range</li>
     <li>Press the 'blackouts' button</li>
     <li>Select your blackouts</li>
     <li>If you want to unselect a blackout just press it again</li>
     <li>If you want to unselect all the blackouts press the 'clear' button</li>
-</ul>
+</ol>
 
 
 ## Code scaffolding
