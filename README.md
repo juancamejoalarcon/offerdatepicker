@@ -4,6 +4,9 @@ This is a datepicker calendar that lets you select a range of dates and within t
 
 ## Quick tutorial
 
+<p align="center">
+    <img src="https://j.gifs.com/86rDkL.gif" align="right"/>
+</p>
 1. Select the range
 2. Press the 'blackouts' button
 3. Select your blackouts
