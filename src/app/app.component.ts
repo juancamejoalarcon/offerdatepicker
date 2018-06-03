@@ -18,7 +18,6 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
   hoveredDate: NgbDateStruct;
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
@@ -56,7 +55,7 @@ export class AppComponent implements OnInit {
           this.blackOutDate = date;
           this.blackOutsList.push(date);
         } else {
-          var index = this.blackOutsList.indexOf(this.isInBlackOutsList(date));
+          const index = this.blackOutsList.indexOf(this.isInBlackOutsList(date));
           if (index !== -1) this.blackOutsList.splice(index, 1);
         }
       }
@@ -75,8 +74,8 @@ export class AppComponent implements OnInit {
       // (Ugly programming alert)
       // This function makes sure that if you click an arrow you cannot 
       // click days out of the selected range
-      for (let arrow of this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-arrow')) {
-        let arrowListener = this.renderer.listen(arrow, 'click', () => {
+      for (const arrow of this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-arrow')) {
+        const arrowListener = this.renderer.listen(arrow, 'click', () => {
           if (this.blackOutModeActive) {
             const days = this.blackoutsDatePicker.nativeElement.querySelectorAll('.ngb-dp-day');
             for (const day of days) {
@@ -97,9 +96,9 @@ export class AppComponent implements OnInit {
   }
 
   isInBlackOutsList(date: NgbDateStruct) {
-    for (let blackout of this.blackOutsList) {
+    for (const blackout of this.blackOutsList) {
       if (equals(date, blackout)) {
-        return true && blackout
+        return true && blackout;
       }
     }
   }
