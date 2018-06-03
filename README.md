@@ -1,4 +1,4 @@
-# Offerdatepicker <img src="https://ng-bootstrap.github.io/img/logo.svg" width="50" height="50"/>
+# Offerdatepicker <img src="https://ng-bootstrap.github.io/img/logo.svg" width="40" height="40"/>
 
 <p align="center">
     <img src="https://j.gifs.com/86rDkL.gif" align="right"/>
