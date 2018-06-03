@@ -19,7 +19,7 @@ This is a datepicker calendar that lets you select a range of dates and within t
 
 ## Installation guide
 
-I built this datepicker on top of the calendar already created by Bootstrap with ngBootstrap.
+I built this datepicker on top of the calendar already created by Bootstrap with ng-bootstrap. So the first step would be to install <a href="https://ng-bootstrap.github.io/#/home">ng-bootstrap</a>
 
 ## Build
 
