@@ -7,11 +7,13 @@ This is a datepicker calendar that lets you select a range of dates and within t
 <p align="center">
     <img src="https://j.gifs.com/86rDkL.gif" align="right"/>
 </p>
-1. Select the range
-2. Press the 'blackouts' button
-3. Select your blackouts
-4. If you want to unselect a blackout just press it again
-5. If you want to unselect all the blackouts press the 'clear' button
+<ul>
+    <li>Select the range</li>
+    <li>Press the 'blackouts' button</li>
+    <li>Select your blackouts</li>
+    <li>If you want to unselect a blackout just press it again</li>
+    <li>If you want to unselect all the blackouts press the 'clear' button</li>
+</ul>
 
 
 ## Code scaffolding
