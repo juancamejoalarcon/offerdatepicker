@@ -30,7 +30,7 @@ I built this datepicker on top of the calendar already created by Bootstrap with
 
 ## Usage
 
-~~~
+```javascript
 import {Component, ViewChild, ElementRef, Renderer2, OnInit} from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
@@ -147,4 +147,4 @@ export class AppComponent implements OnInit {
   // This function checks if a date is within a range
   isInRange = date => this.isFrom(date) || this.isTo(date) || this.isInside(date) || this.isHovered(date);
 }
-~~~
+```
