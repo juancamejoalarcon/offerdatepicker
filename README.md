@@ -4,6 +4,13 @@
     <img src="https://j.gifs.com/86rDkL.gif" align="right"/>
 </p>
 
+<p align="center">
+  <a href="https://travis-ci.org/juancamejoalarcon/formbaseddocs">
+    <img src="https://travis-ci.org/webpro/release-it.svg?branch=master"
+         alt="Travis">
+  </a>
+</p>
+
 This is a datepicker calendar that lets you select a range of dates and within that range you are also able to select days when you don't want this range to be applied. For instance, if I were to create an offer, that is going to be available during a period of time, but I don't want this offer to be available on Saturdays, or the day 24th of December, this datepicker lets you select both, so within a range you will also have 'blackouts' (didn't know how to call it).
 
 ## Quick tutorial
