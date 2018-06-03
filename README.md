@@ -17,9 +17,9 @@ This is a datepicker calendar that lets you select a range of dates and within t
 </ol>
 
 
-## Code scaffolding
+## Installation guide
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I built this datepicker on top of the calendar already created by Bootstrap with ngBootstrap.
 
 ## Build
 
