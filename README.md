@@ -1,10 +1,10 @@
-# Offerdatepicker
+# Offerdatepicker <img src="https://raw.githubusercontent.com/vhesener/Closures/assets/assets/playground_Icon.png" width="50" height="50"/>
 
 <p align="center">
     <img src="https://j.gifs.com/86rDkL.gif" align="right"/>
 </p>
 
-<p align="center">
+<p>
   <a href="https://travis-ci.org/juancamejoalarcon/offerdatepicker">
     <img src="https://travis-ci.org/webpro/release-it.svg?branch=master"
          alt="Travis">
