@@ -1,7 +1,9 @@
 <h1> Offerdatepicker <img src="https://ng-bootstrap.github.io/img/logo.svg" width="40" height="40"/>
+<p>
 <sub>Built with ❤︎ by
   <a href="https://juancamejoalarcon">Juan Camejo Alarcón</a>
   </sub>
+  </p>
 </h1>
 
 <p align="center">
