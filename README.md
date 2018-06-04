@@ -40,7 +40,8 @@ I built this datepicker on top of the calendar already created by Bootstrap with
 
 As it is done with others ng-bootstrap <a href="https://ng-bootstrap.github.io/#/components/datepicker/examples">components</a> create the offerdatepicker using the following code:
 
-### .ts
+### component.ts
+
 ```javascript
 import {Component, ViewChild, ElementRef, Renderer2, OnInit} from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
@@ -159,7 +160,8 @@ export class AppComponent implements OnInit {
   isInRange = date => this.isFrom(date) || this.isTo(date) || this.isInside(date) || this.isHovered(date);
 }
 ```
-### .html
+### component.html
+
 ```html
 <p>Example of the range selection</p>
 
@@ -196,4 +198,39 @@ export class AppComponent implements OnInit {
 <pre>From: {{ fromDate | json }} </pre>
 <pre>To: {{ toDate | json }} </pre>
 <pre>Blackouts: {{ blackOutsList | json }} </pre>
+```
+
+### component.css
+
+```css
+.custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+  }
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }
+  .blackOutMode {
+    background-color: white !important;
+    color: white;
+  }
+  .blackOutMode:hover {
+    color: #f8f9fa;
+  }
+  .blackOutHover:hover {
+    background-color: black !important;
+  }
+  .blackout {
+    background-color: #B6B6B6 !important;
+  }
 ```
