@@ -28,6 +28,9 @@ This is a datepicker calendar that lets you select a range of dates and within t
     <li>If you want to unselect all the blackouts press the 'clear' button</li>
 </ol>
 
+## Demo
+
+Mess with it in stackblitz: <a href="https://stackblitz.com/edit/angular-axhrwd">DEMO</a>
 
 ## Installation
 
