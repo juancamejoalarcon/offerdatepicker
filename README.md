@@ -1,7 +1,8 @@
-<style>
-h1 {color:red;}
-p {color:blue;}
-</style>
+(setq markdown-xhtml-header-content
+      "<style type='text/css'>
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>")
 
 
 <h1> Offerdatepicker <img src="https://ng-bootstrap.github.io/img/logo.svg" width="40" height="40"/>
