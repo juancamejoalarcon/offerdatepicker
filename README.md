@@ -40,7 +40,7 @@ I built this datepicker on top of the calendar already created by Bootstrap with
 
 As it is done with others ng-bootstrap <a href="https://ng-bootstrap.github.io/#/components/datepicker/examples">components</a> create the offerdatepicker using the following code:
 
-
+### .ts
 ```javascript
 import {Component, ViewChild, ElementRef, Renderer2, OnInit} from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
@@ -158,4 +158,42 @@ export class AppComponent implements OnInit {
   // This function checks if a date is within a range
   isInRange = date => this.isFrom(date) || this.isTo(date) || this.isInside(date) || this.isHovered(date);
 }
+```
+### .html
+```html
+<p>Example of the range selection</p>
+
+<div #blackoutsDatePicker>
+
+  <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t">
+  </ngb-datepicker>
+
+  <ng-template #t let-date="date" let-focused="focused">
+    <span class="custom-day"
+        [class.focused]="focused"
+        [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+        [class.faded]="isHovered(date) || isInside(date)"
+        [class.blackOutMode]="blackOutModeActive && !isInRange(date)"
+        [class.blackOutHover]="blackOutModeActive && isInRange(date)"
+        [class.blackout]="isInBlackOutsList(date) && isInRange(date)"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null">
+      {{ date.day }}
+    </span>
+  </ng-template>
+
+</div>
+<button style="font-size:70%" type="button" class="btn btn-primary btn-sm my-1"(click)="blackoutMode()">
+  Blackouts
+</button>
+<button style="font-size:70%" type="button" class="btn btn-secondary btn-sm my-1 ml-2" 
+(click)="clearBlackoutsList()" [class.d-none]="!blackOutModeActive">
+  Clear
+</button>
+
+<hr>
+
+<pre>From: {{ fromDate | json }} </pre>
+<pre>To: {{ toDate | json }} </pre>
+<pre>Blackouts: {{ blackOutsList | json }} </pre>
 ```
